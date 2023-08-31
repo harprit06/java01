@@ -1,6 +1,6 @@
-FROM openjdk:8-jre-alpine3.9
-WORKDIR /usr/src/app
-COPY sample-calculator-bundle-2.0.jar ./
+FROM openjdk:11-jre-slim
+WORKDIR /app
+COPY helloworld-0.0.2-SNAPSHOT.jar app.jar
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar"]
-CMD ["sample-calculator-bundle-2.0.jar"]
-EXPOSE 80
+CMD ["app.jar"]
