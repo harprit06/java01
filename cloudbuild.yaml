@@ -1,7 +1,7 @@
 steps:
 #Build
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/delta-avenue-396214/helloappimage']
+  args: ['build', '-t', 'gcr.io/delta-avenue-396214/helloappimage', '.']
 #Push
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/delta-avenue-396214/helloappimage']
