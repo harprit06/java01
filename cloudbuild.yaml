@@ -1,0 +1,13 @@
+steps:
+#Build
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/delta-avenue-396214/helloappimage']
+#Push
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/delta-avenue-396214/helloappimage']
+#Deploy
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['set', 'image', 'deployment/helloappdeploy', 'helloapp=gcr.io/delta-avenue-396214/helloappimage']
+  env:
+  - 'CLOUDSDK_COMPUTE_REGION='
+  - 'CLOUDSDK_CONTAINER_CLUSTER='
