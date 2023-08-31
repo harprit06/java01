@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
+FROM openjdk
 WORKDIR /app
 COPY helloworld-0.0.2-SNAPSHOT.jar app.jar
 EXPOSE 8080
