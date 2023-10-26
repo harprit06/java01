@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  login:
+  workflow:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -21,3 +21,5 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Push the Docker Image
       run: docker push honey060797/demorepo:latest
+    - name: Run the container
+      run: docker run --name helloJava honey060797/demorepo:latest
