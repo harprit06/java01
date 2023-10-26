@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag honey060797/demorepo:$(date +%s)
+      run: docker build . --file Dockerfile --tag honey060797/demorepo:latest
     - name: Push the Docker Image
-      run: docker push honey060797/demorepo:$(date +%s)
+      run: docker push honey060797/demorepo:latest
