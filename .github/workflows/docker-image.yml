@@ -22,4 +22,4 @@ jobs:
     - name: Push the Docker Image
       run: docker push honey060797/demorepo:latest
     - name: Run the container
-      run: docker run --name helloJava honey060797/demorepo:latest
+      run: docker run -d --name helloJava honey060797/demorepo:latest
